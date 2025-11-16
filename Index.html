@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .box {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        img {
+            width: 200px;
+            margin-top: 10px;
+        }
+        .copy-btn {
+            background: #4caf50;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Send Crypto Payment</h2>
+    <p>Scan the QR or copy the wallet address</p>
+
+    <div class="box">
+        <h3>USDT (TRC20)</h3>
+        <img src="usdt-qr.png" alt="QR Code" />
+        <p id="wallet">TSd8sd9f8sd9…your address here…</p>
+        <button class="copy-btn" onclick="copyWallet()">Copy Address</button>
+    </div>
+
+    <script>
+        function copyWallet() {
+            const text = document.getElementById("wallet").innerText;
+            navigator.clipboard.writeText(text);
+            alert("Wallet address copied!");
+        }
+    </script>
+</body>
+</html>
